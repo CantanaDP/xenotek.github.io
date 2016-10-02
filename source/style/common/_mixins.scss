@@ -1,0 +1,26 @@
+@mixin clearfix{
+	&:after, &:before{
+		display: table;
+		content: "";
+	}
+	&:after{
+		clear: both;
+	}
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+
+
+

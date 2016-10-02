@@ -2,4 +2,8 @@ body {
   margin: 0;
 }
 
-@import 'common/greating';
+@import 'common/fonts';
+@import 'common/_mixins';
+@import 'common/_spritepng';
+@import 'pages/welcome';
+@import 'pages/about';

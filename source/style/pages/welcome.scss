@@ -1,0 +1,443 @@
+$footer_height: 100px;
+
+
+html {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  line-height: 1.42;
+  background-color: #FFF;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+label{
+  cursor: pointer;
+}
+
+
+.wrapper{
+  min-height: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: url(../img/water.jpg) 0 0 no-repeat;
+  background-size: cover;
+  margin-bottom: -$footer_height;
+
+  &:after{
+    height: $footer_height;
+    display: block;
+    content: "";
+    position: relative;
+  }
+}
+
+.authorize{
+  position: absolute;
+  right: 20px;
+  top: 20px;  
+  height: 45px;
+  line-height: 42px;
+  padding: 0px 30px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  border-radius: 30px;
+  border: 1px solid #fff;
+  text-decoration: none;
+
+  &:hover{
+    background-color: #4e8839;
+    border: 1px solid #729e19;
+  }
+}
+
+
+.footer{
+  height: $footer_height;
+  position: relative;
+  padding: 40px 0;
+}
+.footer__copyright{
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-family: Roboto;
+  position: relative;
+  z-index: 1;
+  perspective: 700px; 
+}
+.welcome__box{
+  width: 380px;
+  height: 421px;
+  border-radius: 5px;
+  background-color: rgba(#122620, 0.6);
+  text-align: center;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+.back{
+  transform: rotateY( -180deg );
+}
+:target .back{
+  transform: rotateY( 0deg );
+}
+:target .front{
+  transform: rotateY( 180deg );
+}
+:target .authorize{
+  display: none;
+}
+.welcome__body{
+  padding-top: 40px;
+}
+
+.welcome__avatar{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #e2e2e2;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.avatar{
+  width: 100%;
+}
+
+.welcome__author{
+  color: white;
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 34px;
+  margin-bottom: 10px;
+}
+
+.welcome__text{
+  opacity: 0.8;
+  color: white;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 35px;
+}
+
+.icon{
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  fill: #fff;
+  opacity: .5;
+}
+
+.socials{
+  text-align: center;
+}
+
+.socials__link{
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 30px;
+
+  &:first-child{
+    margin-left: 0;
+  }
+
+  &:hover .icon{
+    fill: #4e8839;
+    opacity: 1;
+  }
+
+}
+
+.icon--vk{
+  width: 31px;
+  height: 17px;
+}
+.icon--github{
+  width: 26px;
+  height: 22px;
+}
+.icon--in{
+  width: 24px;
+  height: 22px;
+}
+
+
+
+.welcome-menu{
+  display: table;
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+}
+.welcome-menu__item{
+  display: table-cell;
+  position: relative;
+
+  &:before{
+    position: absolute;
+    left: -1px;
+    z-index: 1;
+    content:'';
+    width: 2px;
+    height: 100%;
+    opacity: 0.5;
+    background-color: #dee3e7;
+  }
+  &:first-child:before{
+    content: none;
+  }
+}
+.welcome-menu--50{
+  .welcome-menu__item{
+    width: 50%;
+  }
+}
+.welcome-menu__link{
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  background-color: #6c9c5a;
+  
+  &:hover{
+    background-color: #4e8839;
+  }
+
+}
+
+.title{
+  color: white;
+  font-family: SansusWebissimo;
+  font-size: 35px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.title--underline{
+  position: relative;  
+  padding-bottom: 25px;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.title--underline:after{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 146px;
+  width: 89px;
+  height: 3px;
+  background-color: white;
+}
+
+.form__group{
+  position: relative;
+  width: 340px;
+  height: 45px;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+  margin-bottom: 20px;
+
+  .icon-wrapper{
+    position: absolute;
+    left: 0;
+    height: 45px;
+    width: 45px;
+    line-height: 45px;
+    background-color: #f0efe9;    
+  }
+  .icon{
+    opacity: 1;
+    margin: auto;
+    fill: #c4cbcd;
+  }
+
+  .icon--login{
+    width: 15px;
+    height: 17px;
+  }
+  .icon--password{
+    width: 18px;
+    height: 17px;
+  }
+}
+.input[type="text"]{
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  border-radius: 25px;
+  border: 0;
+  outline: none;
+  padding-left: 65px;
+  padding-right: 20px;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 400;
+
+  @include placeholder{
+    opacity: 0.5;
+    color: #373e42;
+  }
+}
+
+.check{
+  margin-bottom: 20px;
+}
+
+
+.check__wrap{
+  width: 20px;
+  height: 20px;
+  background-color: #6c9c5a;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 11px;
+  position: relative;
+  
+  .icon{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    margin: auto;  
+  }
+  .icon--check{
+    width: 12px;
+    height: 9px;
+
+  }
+}
+
+.check__checkbox{
+  position: absolute;
+  left: -9999px;
+}
+
+.check__text{
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  opacity: .8;
+}
+
+.check__checkbox+.check__wrap .icon--check{
+  display: none;
+}
+.check__checkbox:checked+.check__wrap .icon--check{
+  display: inline-block;
+  color: #8cc34b;
+}
+
+.form__question{
+  opacity: 0.8;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.radiobox{
+  display: inline-block;
+
+}
+.radiobox__label{
+  display: inline-block;
+  vertical-align: middle; 
+  position: relative;
+  padding-left: 30px;
+  margin-left: 40px;
+   
+}
+.radiobox__label--first{
+  margin-left: 0px;  
+}
+.radiobox__input{
+  display: none;
+}
+
+.radiobox__text{
+  opacity: 0.8;
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+
+.radiobox__label:before {
+  content: "";
+  display: inline-block;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 1px;
+  background-color: #fff;
+}
+
+.radiobox .radiobox__label:before {
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.radiobox__input:checked + .radiobox__label:before {
+  content: "\2022";
+  color: #6c9c5a;
+  font-size: 36px;
+  text-align: center;
+  line-height: 16px;
+}
+
+.icon--close{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

@@ -1,0 +1,33 @@
+//-
+    Mixin to insert icons from the sprite
+    @param {string} name - id of element
+    @param {string}|Array<string> [mods] name - additional classesid of element
+    @param {string} name - id of element
+    @example
+    +icon('mail', ['icon-20', 'icon-light'])
+
+mixin icon(name)
+    svg(class="icon icon--" + name)
+        use(xlink:href="/assets/img/sprite.svg#" + name)
+
+mixin iconpng(name,mods)
+    - mods = mods || ''
+    svg(class="icon icon--" + name class=mods)
+        use(xlink:href="/assets/img/sprite.png#" + name)
+
+
+mixin socials(className, items)
+    each val, key in items
+        a(class=className href=val)
+            +icon(key)
+
+mixin menu(className, items, mods)
+    - mods = ' '+mods || ''
+    ul(class=className+mods)
+        each val, key in items
+            li(class=`${className}__item`)
+                a(class=`${className}__link` href=val)= key
+
+
+    
+

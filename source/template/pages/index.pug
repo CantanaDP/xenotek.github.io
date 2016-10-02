@@ -1,7 +1,57 @@
 extends ../_template
 
 block variables
-  - var title = 'Home page'
+	- var title = 'Сайт-портфолио'
 
-block content
-  include ../common/_greating
+block content	
+	.wrapper
+		.welcome#authorize
+			a(class="authorize" href="#authorize") Авторизоваться
+			.welcome__box.front
+				.welcome__body
+					.welcome__avatar
+						img(class="avatar" src="assets/img/avatar.jpg" alt="avatar")
+					h1.welcome__author Корепанов Иван
+					.welcome__text Личный сайт веб разработчика
+					.socials
+						+socials("socials__link", {'vk': '#', 'github': '#', 'in': '#' })
+		
+				+menu("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
+			
+			.welcome__box.back
+				.welcome__body
+					.close
+						a(href="#")
+							+icon('close')
+					.title.title--underline Авторизуйтесь
+					form.form(action="#" method="POST" )
+						.form__group
+							.icon-wrapper
+								+icon('login')
+							input.input(type="text" placeholder="Логин" name="login")
+						.form__group
+							.icon-wrapper
+								+icon('password')
+							input.input(type="text" placeholder="Пароль" name="password")
+						
+						.check
+							label.check__label
+								input(type="checkbox" class="check__checkbox" name="robot")
+								.check__wrap
+									+icon('check')
+								span(class="check__text") Я человек
+						.form__question Вы точно не робот?
+						.radiobox
+							input(id="yes" checked type="radio" class="radiobox__input" name="answer")
+							label.radiobox__label(for="yes").radiobox__label--first
+								span.radiobox__text Да
+							input(id="notsure" type="radio" class="radiobox__input" name="answer")
+							label.radiobox__label(for="notsure") 
+								span.radiobox__text Не уверен
+					//form
+
+				+menu("welcome-menu", {'На главную': '#', 'Войти': '#' }, "welcome-menu--50")
+								
+
+	footer.footer
+		.footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016
