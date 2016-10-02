@@ -9,14 +9,15 @@ block content
 			a(class="authorize" href="#authorize") Авторизоваться
 			.welcome__box.front
 				.welcome__body
-					.welcome__avatar
-						img(class="avatar" src="assets/img/avatar.jpg" alt="avatar")
-					h1.welcome__author Корепанов Иван
-					.welcome__text Личный сайт веб разработчика
-					.socials
-						+socials("socials__link", {'vk': '#', 'github': '#', 'in': '#' })
-		
-				+menu("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
+					.about
+						.about__avatar
+							img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
+						h1.about__author Корепанов Иван
+						.about__text Личный сайт веб разработчика
+						.socials.socials--opacity05
+							+socials("socials", socials)
+			
+					+menu("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
 			
 			.welcome__box.back
 				.welcome__body

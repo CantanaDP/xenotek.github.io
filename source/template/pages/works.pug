@@ -1,7 +1,48 @@
 extends ../_template
 
 block variables
-  - var title = 'Another page'
+	- var title = 'Мои работы'
 
 block content
-  h1 It's some another page
+	.main-wrapper
+		.overlay#open
+			a(href="#").hamburger-close
+			+menu('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
+		header.header
+			.portfolio
+				+icon('portfolio_header')
+			.header__socials
+				.socials.socials--floatleft
+					+socials("socials", socials)
+			.header__hamburger
+				a(href="#open").hamburger
+					+icon('hamburger')
+			.header__about
+				.about
+					.about__avatar
+						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
+					h1.about__author Корепанов Иван
+						.about__text Личный сайт веб разработчика
+			a(href="#next").header__arrow-down
+				+icon('arrow_down')
+
+			section.section-works-title#next s
+
+
+			section.section-contacts s
+
+
+
+	footer.main-footer
+		.black-footer
+			.black-footer__item
+				p.black-footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+			.black-footer__item
+				.black-footer__menu
+					+menu("black-footer-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html', 'Авторизация': '/#authorize' })
+				.socials.socials--floatleft
+					+socials("socials", socials)
+			.black-footer__item
+				blockquote.blockquote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+				.blockquote-author — Martin Golding
+		.main-footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016
