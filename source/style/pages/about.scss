@@ -111,10 +111,27 @@ $footer_height: 38px;
   background: url(../img/water-1200.jpg) 0 0 no-repeat;
   background-size: cover;
   height: 100vh;
-  min-height: 650px;
+ /* min-height: 650px;*/
   position: relative;
 
-  .portfolio{
+
+  .triangles{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+
+    .icon--bg{
+      position: absolute;
+      bottom: 0;
+      height: 180px;
+      width: 100%;
+      fill: #f8f9f5;
+    }
+  }
+
+
+  .portfolio, .blog-svg{
     position: absolute;
     top: 0;
     bottom: 0;
@@ -123,11 +140,16 @@ $footer_height: 38px;
     margin: auto;
     text-align: center;
 
-    .icon--portfolio_header{
+    .icon{
       width: 90%;
       height: 100%;
       fill: rgba(#fff, 0.12);
     }
+  }
+  .blog-svg{
+    height: 210px;
+    margin-top: 200px;
+
   }
   .header__about{
     position: absolute;
@@ -136,6 +158,7 @@ $footer_height: 38px;
     align-items: center;
     height: 100%;
     width: 100%;
+    font-family: Roboto;
   }
   .header__socials{
     position: absolute;
@@ -310,7 +333,7 @@ $footer_height: 38px;
   }
 }
 .title-about--short{
-  max-width: 255px;
+  max-width: 320px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
@@ -332,10 +355,10 @@ $footer_height: 38px;
     right: 0;
     top: -50px;  
     max-height: 125px;
-    max-width: 357px;
+    max-width: 100%;
     margin: auto;
     
-    .icon--about_header{     
+    .icon{     
       height: 100%;
       width: 100%;
       fill: #93c42e;
@@ -359,7 +382,7 @@ $footer_height: 38px;
 
   position: relative;
   width: 100%;
-
+  
   img{
     max-width: 100%; width: 100%;
   }

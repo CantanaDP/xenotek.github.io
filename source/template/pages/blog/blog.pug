@@ -1,0 +1,61 @@
+extends ../_template
+
+block variables
+	- var title = 'Блог'
+
+block content
+	.main-wrapper.main-wrapper--bg#top
+		.overlay#open
+			a(href="#").hamburger-close
+			+menu('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
+		header.header.header--height
+			.blog-svg
+				+icon('blog_header')
+			.header__socials
+				.socials.socials--floatleft
+					+socials("socials", socials)
+			.header__hamburger
+				a(href="#open").hamburger
+					+icon('hamburger')
+			.header__about
+				.about
+					.about__avatar
+						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
+					h1.title-about.title-about--big.title--blog Блог
+					.about__text Статьи, которые я написал
+
+		section.section-blog#next
+			.triangles.triangles--height
+				.triangle.triangle-left
+				.triangle.triangle-right
+			
+			.blog-wrapper
+				aside.blog.blog__left
+					nav.blog__nav
+						+menu('nav', {'Самое важное в SASS': '#', 'Приёмы в вёрстке, без которых не обходится ни один сайт': '#', 'Самый необходимый набор Gulp плагинов': '#', 'Почему я выбрал Pug': '#'})
+				
+				main.blog.blog__right
+					section.blog__section
+						article.blog__article
+							header.blog__article-header 
+								h2.blog__title Самое важное в SASS
+								time.blog__publish-date 30 января 2014
+							p.
+								Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+							p.
+								Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
+
+
+	footer.main-footer
+		.black-footer
+			.black-footer__item
+				p.black-footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
+			.black-footer__item
+				.black-footer__menu
+					+menu("black-footer-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html', 'Авторизация': '/#authorize' })
+				.socials.socials--floatleft
+					+socials("socials", socials)
+			.black-footer__item
+				blockquote.blockquote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
+				.blockquote-author — Martin Golding
+		.main-footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016

@@ -4,10 +4,10 @@ block variables
 	- var title = 'Мои работы'
 
 block content
-	.main-wrapper
+	.main-wrapper#top
 		.overlay#open
 			a(href="#").hamburger-close
-			+menu('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
+			+menu-no-blank('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
 		header.header
 			.portfolio
 				+icon('portfolio_header')
@@ -26,11 +26,77 @@ block content
 			a(href="#next").header__arrow-down
 				+icon('arrow_down')
 
-			section.section-works-title#next s
+		section.section-works-title#next
+			.triangles
+				.triangle.triangle-left
+				.triangle.triangle-right
+			h2.title-about.title-about--big.title--nomargin Мои работы
+				.about-page__bg
+					+icon('works_header')
+
+		section.section-slider
+			.slider
+				.slider__page.slider__page-left
+					.description
+						h2.title-about.title-about--short.description--margin Сайт школы онлайн Образования
+						.description__text HTML , CSS, JAVASCRIPT
+						a(href="https://loftschool.com/" target="_blank").description__link
+							+icon('link')
+							span Посмотреть сайт
+
+				.slider__page.slider__page-right
+					.slider__show
+						img.slider__show-img(src="/assets/img/example.jpg", alt="slider")
+					.slider__buttons
+						.slider__button.slider__button-left
+							a(href="#").slider__arrow
+								img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
+								+icon('portf_arrow_down')
+						.slider__button.slider__button-left
+							a(href="#").slider__arrow
+								img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
+								+icon('portf_arrow_up')
 
 
-			section.section-contacts s
+		section.section-review
+			h2.title-about.title-about--big.title-about--short-400 Что обо мне говорят
+				.about-page__bg
+					+icon('about_header')
+			
+			.reviews
+				.review.reviews__left
+					.review__avatar
+						img(class="review__img" src="assets/img/dima.jpg" alt="avatar")
+					.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+					.review__author Ковальчук Дмитрий
+					.review__about — основатель Loftschool
 
+				.review.reviews__right
+					.review__avatar
+						img(class="review__img" src="/assets/img/zar.jpg" alt="avatar")
+					.review__text Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+					.review__author Зар Захаров
+					.review__about — преподаватель
+
+
+		section.section-feedback
+			.feedback
+				h2.title-about.title-about--short.description--margin Связаться со мной
+				form.feedback__form(action='#')
+					.form__group
+						input.input(type="text" placeholder="Имя" name="name")
+					.form__group
+						input.input(type="text" placeholder="Email" name="password")
+					.form__group.form__group--textarea
+						textarea.textarea(rows='6', name='subject', placeholder='Ваше сообщение')
+					.form__buttons
+						button.form__button.form__submit(name='submit', type='submit',) Отправить
+						button.form__button.form__reset(name='clear', type='reset') Очистить
+					
+
+			.section-feedback__arrow-up
+				a(href="#top")
+					+icon('portf_arrow_up')
 
 
 	footer.main-footer

@@ -14,22 +14,30 @@ mixin iconpng(name,mods)
 
 mixin socials(className, items)
 	each val, key in items
-		a(class=`${className}__link` href=val)
+		a(class=`${className}__link` href=val target="_blank")
 			+icon(key)
 
 mixin menu(className, items, mods)
-	- mods = ' '+mods || ''
-	ul(class=className+mods)
+	- mods = mods || ''
+	ul(class=className class=mods)
 		each val, key in items
 			li(class=`${className}__item`)
-				a(class=`${className}__link` href=val)= key
+				a(class=`${className}__link` href=val target="_blank")= key
+
+mixin menu-no-blank(className, items, mods)
+	- mods = mods || ''
+	ul(class=className class=mods)
+		each val, key in items
+			li(class=`${className}__item`)
+				a(class=`${className}__link` href=val )= key
+
 
 mixin contacts-menu(className, icons, links, items)
 	ul(class=className)
 		each text, index in items
 			li(class=`${className}__item`)
 				+icon(icons[index])
-				a(class=`${className}__link` href=links[index])= text
+				a(class=`${className}__link` href=links[index] target="_blank")= text
 			
 mixin chart(items, title)
 	.skills__row

@@ -17,7 +17,7 @@ block content
 						.socials.socials--opacity05
 							+socials("socials", socials)
 			
-					+menu("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
+					+menu-no-blank("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
 			
 			.welcome__box.back
 				.welcome__body
@@ -49,9 +49,9 @@ block content
 							input(id="notsure" type="radio" class="radiobox__input" name="answer")
 							label.radiobox__label(for="notsure") 
 								span.radiobox__text Не уверен
-					//form
+				
 
-				+menu("welcome-menu", {'На главную': '#', 'Войти': '#' }, "welcome-menu--50")
+						+menu("welcome-menu", {'На главную': '#', 'Войти': '#' }, "welcome-menu--50")
 								
 
 	footer.footer
