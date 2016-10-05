@@ -20,7 +20,7 @@ block content
 					+menu-no-blank("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
 			
 			.welcome__box.back
-				.welcome__body
+				.welcome__body.welcome__body--authorize
 					.close
 						a(href="#")
 							+icon('close')
@@ -38,7 +38,7 @@ block content
 						.check
 							label.check__label
 								input(type="checkbox" class="check__checkbox" name="robot")
-								.check__wrap
+								span.check__wrap
 									+icon('check')
 								span(class="check__text") Я человек
 						.form__question Вы точно не робот?
@@ -50,9 +50,10 @@ block content
 							label.radiobox__label(for="notsure") 
 								span.radiobox__text Не уверен
 				
+						.form__buttons
+							a.form__button(href='#') На главную
+							button.form__button.form__submit(name='enter', type='submit') Войти
 
-						+menu("welcome-menu", {'На главную': '#', 'Войти': '#' }, "welcome-menu--50")
-								
 
-	footer.footer
+	footer.footer-welcome
 		.footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016

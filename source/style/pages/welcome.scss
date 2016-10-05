@@ -70,7 +70,7 @@ a{
 }
 
 
-.footer{
+.footer-welcome{
   height: $footer_height;
   position: relative;
   padding: 40px 0;
@@ -96,7 +96,6 @@ a{
 }
 .welcome__box{
   width: 380px;
-  height: 421px;
   border-radius: 5px;
   background-color: rgba(#122620, 0.6);
   text-align: center;
@@ -122,6 +121,10 @@ a{
 .welcome__body{
   padding-top: 40px;
   text-align: center;
+  margin-bottom: 84px;
+}
+.welcome__body--authorize{
+  margin: 0;
 }
 .about{
   text-align: center;
@@ -129,13 +132,13 @@ a{
   display: inline-block;
 }
 .about__avatar{
-  width: 150px;
-  height: 150px;
+  width: 141px;
+  height: 141px;
   border-radius: 50%;
   overflow: hidden;
   background-color: #e2e2e2;
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 .about__img{
   width: 100%;
@@ -145,7 +148,8 @@ a{
   color: white;
   font-size: 28px;
   font-weight: 500;
-  line-height: 34px;
+  line-height: 1;
+  margin: 0;
   margin-bottom: 10px;
 }
 
@@ -154,8 +158,8 @@ a{
   color: white;
   font-size: 16px;
   font-weight: 400;
-  line-height: 24px;
-  margin-bottom: 35px;
+  line-height: 1;
+  margin-bottom: 34px;
 }
 
 .icon{
@@ -175,7 +179,7 @@ a{
 .socials__link{
   text-decoration: none;
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 29px;
 
   &:first-child{
     margin-left: 0;
@@ -190,8 +194,8 @@ a{
 }
 
 .icon--vk{
-  width: 31px;
-  height: 17px;
+  width: 30px;
+  height: 21px;
 }
 .icon--github{
   width: 26px;
@@ -199,7 +203,7 @@ a{
 }
 .icon--in{
   width: 24px;
-  height: 22px;
+  height: 25px;
 }
 
 
@@ -207,7 +211,7 @@ a{
 .welcome-menu{
   display: table;
   height: 45px;
-  line-height: 45px;
+  line-height: 44px;
   width: 100%;
   position: absolute;
   bottom: 0px;
@@ -239,7 +243,7 @@ a{
   display: inline-block;
   height: 100%;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 28px;
   text-align: center;
   color: #fff;
   font-size: 16px;
@@ -252,6 +256,7 @@ a{
 }
 
 .title{
+
   color: white;
   font-family: SansusWebissimo;
   font-size: 35px;
@@ -264,6 +269,50 @@ a{
 }
 .title--underline:after{
    @include underline(white);
+}
+
+
+.form{
+  .form__buttons{
+    display: table;
+    width: 100%;
+  }
+  .form__button{
+    padding: 0;
+    cursor: pointer;
+    height: 45px;
+    line-height: 45px;
+    display: inline-block;
+    vertical-align: bottom;
+    width: 50%;
+    border: none;
+    text-align: center;
+    color: #fff;
+    background-color: #6c9c5a;
+    position: relative;
+
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: 500;
+
+    &:hover{
+      background-color: #4e8839;
+    }
+
+    &:before{
+      position: absolute;
+      left: -1px;
+      z-index: 1;
+      content:'';
+      width: 2px;
+      height: 100%;
+      opacity: 0.5;
+      background-color: #dee3e7;
+    }
+    &:first-child:before{
+      content: none;
+    }
+  }
 }
 
 .form__group{
@@ -383,7 +432,7 @@ a{
 
 .radiobox{
   display: inline-block;
-
+  margin-bottom: 40px;
 }
 .radiobox__label{
   display: inline-block;
@@ -428,12 +477,25 @@ a{
   border: 1px solid #ccc;
 }
 
-.radiobox__input:checked + .radiobox__label:before {
-  content: "\2022";
+.radiobox__input:checked + .radiobox__label span:before {
+ /* content: "\2022";
   color: #6c9c5a;
   font-size: 36px;
   text-align: center;
-  line-height: 16px;
+  line-height: 16px;*/
+
+  content: "";
+  display: inline-block;
+  margin: auto;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: absolute;
+  left: 6px;
+  bottom: 7px;
+
+  background-color: #6c9c5a;
+  
 }
 
 .close{

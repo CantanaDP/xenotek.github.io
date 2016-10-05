@@ -12,7 +12,7 @@ block content
 			.portfolio
 				+icon('portfolio_header')
 			.header__socials
-				.socials.socials--floatleft
+				.socials
 					+socials("socials", socials)
 			.header__hamburger
 				a(href="#open").hamburger
@@ -22,7 +22,7 @@ block content
 					.about__avatar
 						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
 					h1.about__author Корепанов Иван
-						.about__text Личный сайт веб разработчика
+					.about__text Личный сайт веб разработчика
 			a(href="#next").header__arrow-down
 				+icon('arrow_down')
 
@@ -30,16 +30,16 @@ block content
 			.triangles
 				.triangle.triangle-left
 				.triangle.triangle-right
-			h2.title-about.title-about--big.title--nomargin Мои работы
-				.about-page__bg
-					+icon('works_header')
+			h2.title-works.title-about--big.title--nomargin Мои работы
+			.title-works-bg
+				+icon('works_header')
 
 		section.section-slider
 			.slider
 				.slider__page.slider__page-left
 					.description
-						h2.title-about.title-about--short.description--margin Сайт школы онлайн Образования
-						.description__text HTML , CSS, JAVASCRIPT
+						h2.description__title Сайт школы онлайн Образования
+						.description__text HTML, CSS, JAVASCRIPT
 						a(href="https://loftschool.com/" target="_blank").description__link
 							+icon('link')
 							span Посмотреть сайт
@@ -59,15 +59,18 @@ block content
 
 
 		section.section-review
-			h2.title-about.title-about--big.title-about--short-400 Что обо мне говорят
-				.about-page__bg
-					+icon('about_header')
+			.icon-list2
+
+			h2.title-review.title-about--big.title-about--short-400 Что обо мне говорят
+			.review-about-bg
+				+icon('about_header')
 			
 			.reviews
 				.review.reviews__left
 					.review__avatar
 						img(class="review__img" src="assets/img/dima.jpg" alt="avatar")
 					.review__text Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+						.icon-quote
 					.review__author Ковальчук Дмитрий
 					.review__about — основатель Loftschool
 
@@ -75,14 +78,18 @@ block content
 					.review__avatar
 						img(class="review__img" src="/assets/img/zar.jpg" alt="avatar")
 					.review__text Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+						.icon-quote
 					.review__author Зар Захаров
 					.review__about — преподаватель
 
 
 		section.section-feedback
+			.icon-list3
+			.icon-list1
+
 			.feedback
-				h2.title-about.title-about--short.description--margin Связаться со мной
-				form.feedback__form(action='#')
+				h2.feedback__title.title-about--short Связаться со мной
+				form.form.feedback__form(action='#')
 					.form__group
 						input.input(type="text" placeholder="Имя" name="name")
 					.form__group
@@ -90,7 +97,7 @@ block content
 					.form__group.form__group--textarea
 						textarea.textarea(rows='6', name='subject', placeholder='Ваше сообщение')
 					.form__buttons
-						button.form__button.form__submit(name='submit', type='submit',) Отправить
+						button.form__button.form__submit(name='submit', type='submit') Отправить
 						button.form__button.form__reset(name='clear', type='reset') Очистить
 					
 
@@ -99,16 +106,4 @@ block content
 					+icon('portf_arrow_up')
 
 
-	footer.main-footer
-		.black-footer
-			.black-footer__item
-				p.black-footer__text Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
-			.black-footer__item
-				.black-footer__menu
-					+menu("black-footer-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html', 'Авторизация': '/#authorize' })
-				.socials.socials--floatleft
-					+socials("socials", socials)
-			.black-footer__item
-				blockquote.blockquote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
-				.blockquote-author — Martin Golding
-		.main-footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016
+	include sections/footer

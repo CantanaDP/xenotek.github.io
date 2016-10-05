@@ -30,6 +30,7 @@ $.gulp.task('default', $.gulp.series(
     'pug',
     'js:foundation',
     'js:process',
+    'copy:favicon',
     'copy:image',
     'copy:fonts',
     'css:foundation'
@@ -41,3 +42,9 @@ $.gulp.task('default', $.gulp.series(
 ));
 
 $.gulp.task('dev', $.gulp.parallel('watch','serve'));
+
+$.gulp.task('tasks', function(cb) {
+    $.path.task.forEach(function(taskPath) { console.log(taskPath.split('/').pop()); });
+    cb();
+  }
+);

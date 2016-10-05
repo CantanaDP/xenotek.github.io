@@ -26,7 +26,7 @@ $footer_height: 38px;
   text-align: center;
 }
 
-.black-footer{
+.footer{
   height: 147px;
   position: absolute;
   bottom: 100%;
@@ -43,7 +43,7 @@ $footer_height: 38px;
     fill: white;
   }
 }
-.black-footer__item{
+.footer__item{
   display: inline-block;
   vertical-align: top;
   width: 33%;
@@ -63,7 +63,7 @@ $footer_height: 38px;
   }
 
 }
-.black-footer__text{
+.footer__text{
   margin: 0;
   color: white;
   font-family: Roboto;
@@ -71,18 +71,18 @@ $footer_height: 38px;
   font-weight: 300;
   line-height: 24px;
 }
-.black-footer-menu{  
+.footer-menu{  
   margin-bottom: 25px;
 }
-.black-footer-menu__item{
+.footer-menu__item{
   display: inline-block;
   margin-right: 15px;
 }
-.black-footer-menu__item:last-child{
+.footer-menu__item:last-child{
   margin-right: 0;
 }
 
-.black-footer-menu__link{
+.footer-menu__link{
   color: white;
   font-family: Roboto;
   font-size: 16px;
@@ -197,6 +197,23 @@ $footer_height: 38px;
   }
 
 }
+
+.aboutme__avatar{
+  @extend .about__avatar;
+  margin-bottom: 24px;
+  
+}
+.aboutme__author{
+  @extend .about__author;
+  font-size: 35px;
+  line-height: 41px;
+  margin-bottom: 5px;
+}
+.aboutme__text{
+  @extend .about__text;
+
+}
+
 /*------------- OVERLAY ---------------*/
 .overlay{
   display: none;
@@ -286,6 +303,7 @@ $footer_height: 38px;
   .section-about__page-wrapper{
     max-width: 460px;
     margin: 0 auto;
+    position: relative;
   }
   .section-about__img{
     margin-bottom: 30px;
@@ -295,6 +313,9 @@ $footer_height: 38px;
     font-family: Roboto;
     font-size: 16px;
     font-weight: 400;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
   }
 }
 .section-about__page--left{
@@ -332,15 +353,21 @@ $footer_height: 38px;
     @include underline(#566358);
   }
 }
+.title--who{
+  padding-bottom: 17px;
+  margin-bottom: 15px;
+}
 .title-about--short{
   max-width: 320px;
   margin: 0 auto;
   margin-bottom: 40px;
 }
 .title-about--big{
-  padding-bottom: 20px;
+  padding-bottom: 13px;
   margin-bottom: 35px;
   font-size: 63px;
+  line-height: 66px;
+  letter-spacing: 2px;
   color: #373e42;
   position: relative;
 
@@ -348,26 +375,40 @@ $footer_height: 38px;
     @include underline(#373e42);
   }
 
-  .about-page__bg{
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    right: 0;
-    top: -50px;  
-    max-height: 125px;
-    max-width: 100%;
-    margin: auto;
-    
-    .icon{     
-      height: 100%;
-      width: 100%;
-      fill: #93c42e;
-      opacity: .1;
-    }   
+}
 
-  }
+.title-skills{
+  @extend .title-about;
+  max-width: 320px;
+  margin: 0 auto;
+  font-size: 35px;
+  line-height: 41px;
+  padding-bottom: 16px;
+  margin-bottom: 40px;
+}
+
+
+.about-page__bg{
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: -42px;  
+  height: 125px;
+  width: 100%;
+  margin: auto;
+  
+  .icon{     
+    height: 100%;
+    width: 100%;
+    fill: #93c42e;
+    opacity: .1;
+  }   
 
 }
+
+
+
 .section-contacts{
   position: relative; 
   display: flex;
@@ -379,12 +420,12 @@ $footer_height: 38px;
   }
 }
 .contacts-map{
-
   position: relative;
   width: 100%;
   
   img{
-    max-width: 100%; width: 100%;
+    max-width: 100%; 
+    width: 100%;
   }
 
   .contacts-map__marker{
@@ -407,12 +448,12 @@ $footer_height: 38px;
 
 }
 .title-about--contacts{
-  padding-bottom: 30px;
-  margin-bottom: 25px;
+  padding-bottom: 28px;
+  margin-bottom: 31px;
 }
 
 .contacts-list__item{
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .contacts-list__link{
@@ -431,20 +472,20 @@ $footer_height: 38px;
 
   .skills__row{
     @include clearfix;
-    margin-bottom: 35px;
+    margin-bottom: 17px;
   }
   .skills__title{
     color: #566358;
     font-family: Roboto;
     font-size: 28px;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   .skills__item{
  /*   margin-right: 30px;
     */
-    margin-bottom: 15px;
-    width: 130px;
+    margin-bottom: 17px;
+    width: 147px;
     display: inline-block;
   }
   .skills__item:last-child{
@@ -474,6 +515,7 @@ $footer_height: 38px;
     color: #4e8839;
     font-family: Roboto;
     font-size: 13px;
+    line-height: 15px;
     font-weight: 500;
 
   }
