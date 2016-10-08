@@ -1,12 +1,13 @@
-body {
-  margin: 0;
-}
 
-@import 'common/fonts';
+
 @import 'common/_mixins';
+@import 'common/_fonts';
 @import 'common/_spritepng';
 @import 'pages/welcome';
 @import 'pages/about';
 @import 'pages/works';
 @import 'pages/blog';
+
+@import 'adaptive/_adaptive';
+
 

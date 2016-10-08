@@ -1,3 +1,4 @@
+
 $footer_height: 38px;
 
 .main-wrapper{
@@ -27,13 +28,12 @@ $footer_height: 38px;
 }
 
 .footer{
-  height: 147px;
+  display: table;
   position: absolute;
   bottom: 100%;
   width: 100%;
   background-color: rgba(#373e42, 0.85);
-  padding: 30px 0;
-  overflow: hidden;
+  padding: 25px 0;
 
   .icon{
     opacity: .5;
@@ -44,10 +44,9 @@ $footer_height: 38px;
   }
 }
 .footer__item{
-  display: inline-block;
+  display: table-cell;
   vertical-align: top;
   width: 33%;
-  min-width: 300px;
   padding: 0 30px;
   position: relative;
   height: 100%;
@@ -58,7 +57,9 @@ $footer_height: 38px;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 2px;
+    width: 1px;
+    margin-left: 1px;
+    margin-top: 4px;
     background-color: rgba(white,0.2);
   }
 
@@ -72,7 +73,7 @@ $footer_height: 38px;
   line-height: 24px;
 }
 .footer-menu{  
-  margin-bottom: 25px;
+  margin-bottom: 21px;
 }
 .footer-menu__item{
   display: inline-block;
@@ -86,7 +87,8 @@ $footer_height: 38px;
   color: white;
   font-family: Roboto;
   font-size: 16px;
-  font-weight: 500;
+  line-height: 24px;
+  font-weight: 400;
 }
 
 .blockquote{
@@ -190,7 +192,10 @@ $footer_height: 38px;
     text-align: center;
     bottom: 15%;
     opacity: 0.7;
-
+    
+    .icon{
+      display: inline-block;
+    }
     &:hover{
       opacity: 1;
     }
@@ -225,17 +230,20 @@ $footer_height: 38px;
   bottom: 0;
 
   padding: 30px;
-
   opacity: 0.87;
   background-color: #6c9c5a;
 
-
   .hamburger-close{
-    @include sprite($hamburger-close);
-    
     position: absolute;
     z-index: 1;
     right: 30px;
+    width: 36px;
+    height: 36px;
+
+    .icon{
+      width: 100%;
+      height: 100%;  
+    }    
   }
 }
 
@@ -411,18 +419,19 @@ $footer_height: 38px;
 
 .section-contacts{
   position: relative; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .icon{
-      fill: #6c9c5a;
-  }
 }
-.contacts-map{
+
+.section-contacts__map{
   position: relative;
   width: 100%;
+  height: 120vh;
+  background: url(/assets/img/map.jpg) 0 0 no-repeat;
+  background-size: cover;
   
+  #map {
+    height: 100%;
+  }
+/*
   img{
     max-width: 100%; 
     width: 100%;
@@ -437,14 +446,23 @@ $footer_height: 38px;
     width: 42px;
     height: 56px;
   }
+  */
 }
-
-.contacts{
+.section-contacts__wrapper{
   position: absolute;
+  top: 20%;
+  width: 100%;
+}
+.contacts{
   color: #566358;
   background-color: rgba(#f4f5f0, 0.85);
   padding: 30px 40px 10px;
   width: 380px;
+  margin: auto;
+  
+  .icon{
+      fill: #6c9c5a;
+  }
 
 }
 .title-about--contacts{

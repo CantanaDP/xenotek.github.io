@@ -4,9 +4,11 @@ block variables
 	- var title = 'Сайт-портфолио'
 
 block content	
-	.wrapper
-		.welcome#authorize
-			a(class="authorize" href="#authorize") Авторизоваться
+	.wrapper#authorize
+		.authorize
+			.authorize__wrapper
+				a(class="authorize__link" href="#authorize") Авторизоваться
+		.welcome
 			.welcome__box.front
 				.welcome__body
 					.about
@@ -56,4 +58,7 @@ block content
 
 
 	footer.footer-welcome
-		.footer__copyright © Корепанов Иван | создано с любовью в LoftSchool | 2016
+		.footer__copyright 
+			span.footer__media © Корепанов Иван 
+			span.footer__media-line | 
+			span создано с любовью в LoftSchool | 2016

@@ -126,12 +126,13 @@
   font-weight: 400;
   padding: 10px;
   padding-right: 20px;
+  border-right: 3px solid transparent;
 
   &:hover{
     color: #4e8839;
-    font-weight: 700;
+   /* font-weight: 700;*/
     border-right: 3px solid #6c9c5a;
-    padding-right: 17px;
+   // padding-right: 17px;
   }
 
 

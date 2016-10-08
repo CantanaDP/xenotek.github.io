@@ -7,6 +7,8 @@ block content
 	.main-wrapper
 		.overlay#open
 			a(href="#").hamburger-close
+				+icon('close')
+
 			+menu-no-blank('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
 		header.header
 			.portfolio
@@ -49,22 +51,19 @@ block content
 					+chart(['HTML5','CSS3','JavaScript & jQuery'], 'Frontend')
 					+chart(['PHP','MySQL','Node.js & npm','Mongo.db'], 'Backend')
 					+chart(['Git','Gulp','Bower'], 'WorkFlow')
-	
-
-				//- var Backend WorkFlow
 
 			section.section-contacts
-				.contacts-map
-					img(src="assets/img/map.jpg", alt="map" )
-					.contacts-map__marker
-						+icon('map_marker')
-
-				- var icons = ['skype', 'envelope', 'phone', 'map_marker']
-				- var links = ['skype:xenolitheone', 'mailto:moskovanin@yandex.ru', 'tel:+79312009324', 'https://www.google.ru/maps/@55.7900315,37.5614709,15z']
-				- var items = ['xenolitheone', 'moskovanin@yandex.ru', '+7 931 200 93 24', 'Москва, м. Динамо']
-				.contacts
-					h2.title-about.title-about--contacts Контакты
-					+contacts-menu("contacts-list", icons, links, items)
+				.section-contacts__map
+					//#map
+					- var icons = ['skype', 'envelope', 'phone', 'map_marker']
+					- var links = ['skype:xenolitheone', 'mailto:moskovanin@yandex.ru', 'tel:+79312009324', 'https://www.google.ru/maps/@55.7900315,37.5614709,15z']
+					- var items = ['xenolitheone', 'moskovanin@yandex.ru', '+7 931 200 93 24', 'Москва, м. Динамо']
+					.section-contacts__wrapper
+						.contacts
+							h2.title-about.title-about--contacts Контакты
+							+contacts-menu("contacts-list", icons, links, items)
 
 	include sections/footer
 	
+	//	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDijOXp2FZJSfRKEEXqJAvpt6aVHOa2lZw&callback=initMap" async  defer)
+	//	script(src="/assets/js/maps.js")
