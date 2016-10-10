@@ -5,9 +5,12 @@ block variables
 
 block content
 	.main-wrapper#top
+		
 		.overlay#open
 			a(href="#").hamburger-close
+				+icon('close')
 			+menu-no-blank('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
+		
 		header.header
 			.portfolio
 				+icon('portfolio_header')
@@ -25,37 +28,36 @@ block content
 					.about__text Личный сайт веб разработчика
 			a(href="#next").header__arrow-down
 				+icon('arrow_down')
+			.triangles-works
+				include sections/triangles
 
 		section.section-works-title#next
-			.triangles
-				.triangle.triangle-left
-				.triangle.triangle-right
 			h2.title-works.title-about--big.title--nomargin Мои работы
 			.title-works-bg
 				+icon('works_header')
 
 		section.section-slider
 			.slider
-				.slider__page.slider__page-left
+				.slider__show
+					img.slider__show-img(src="/assets/img/example.jpg", alt="slider")
+				
+				.slider__description
 					.description
 						h2.description__title Сайт школы онлайн Образования
 						.description__text HTML, CSS, JAVASCRIPT
 						a(href="https://loftschool.com/" target="_blank").description__link
 							+icon('link')
 							span Посмотреть сайт
-
-				.slider__page.slider__page-right
-					.slider__show
-						img.slider__show-img(src="/assets/img/example.jpg", alt="slider")
-					.slider__buttons
-						.slider__button.slider__button-left
-							a(href="#").slider__arrow
-								img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
-								+icon('portf_arrow_down')
-						.slider__button.slider__button-left
-							a(href="#").slider__arrow
-								img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
-								+icon('portf_arrow_up')
+							
+				.slider__buttons
+					.slider__button.slider__button-left
+						a(href="#").slider__arrow
+							img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
+							+icon('portf_arrow_down')
+					.slider__button.slider__button-left
+						a(href="#").slider__arrow
+							img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
+							+icon('portf_arrow_up')
 
 
 		section.section-review
@@ -106,4 +108,4 @@ block content
 					+icon('portf_arrow_up')
 
 
-	include sections/footer
+			include sections/footer

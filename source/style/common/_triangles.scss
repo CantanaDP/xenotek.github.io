@@ -1,0 +1,78 @@
+
+.triangles-about, 
+.triangles-works,
+.triangles-blog{
+  position: absolute;
+  bottom: 0; 
+  width: 100%;
+}
+.triangles{
+  display: block;
+	width: 100%;
+	height: 15vh;
+}
+.triangle{
+  fill: #faf8f0;
+}
+.triangles-works{
+
+  .triangle{
+    fill: #f8f9f5;
+  }
+}
+.triangles-about{
+  .triangle-left{
+    fill: #ebefe2;
+  }
+  .triangle-right{
+    fill: #f4f5f0;
+  }
+}
+
+
+
+/*Треугольники на css*/
+
+/*
+.triangles{
+  font-size: 0;
+}
+.triangle{
+  display: inline-block;
+  vertical-align: top;
+  width: 50%;
+  position: relative;
+  background-color: #f8f9f5;
+  padding: 60px;
+  padding-top: 0;
+  
+  &:before{
+    content:'';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin-top: -200px;
+  }
+}
+
+.triangle-left{
+
+  &:before{
+    float: right;
+    margin-right: -60px;
+    border-width: 200px 0 0 1000px;
+    border-color: transparent transparent transparent #f8f9f5;
+  }
+}
+.triangle-right{
+
+  &:before{
+    position: absolute;
+    float: left;
+    margin-left: -60px;
+    border-width:  0 0 200px 1000px;
+    border-color: transparent transparent #f8f9f5 transparent;
+  }
+}
+
+*/

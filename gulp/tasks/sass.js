@@ -1,15 +1,16 @@
 'use strict';
 
 module.exports = function() {
-  var options = {
-    //propWhiteList: [],//['font', 'font-size', 'line-height', 'letter-spacing','height','margin-bottom','margin-top','padding','padding-bottom','padding-top'],
-  };
 
   $.gulp.task('sass', function() {
     return $.gulp.src(['./source/style/app.scss', './source/style/adaptive/*.scss'])
       .pipe($.gp.sourcemaps.init())
       .pipe($.gp.sass()).on('error', $.gp.notify.onError({ title: 'Style' }))
-      .pipe($.gp.pxtorem())
+      .pipe($.gp.pxtorem({
+        propWhiteList: ['font', 'font-size', 'line-height', 
+        'letter-spacing','margin','margin-bottom','margin-top',
+        'padding','padding-bottom','padding-top']
+      }))
 /*
       .pipe($.gp.cssUnit({
             type     :    'px-to-rem',

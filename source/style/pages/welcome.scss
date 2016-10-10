@@ -1,4 +1,4 @@
-$footer_height: 100px;
+$footer_height: 38PX;
 
 
 html {
@@ -12,13 +12,15 @@ html {
 
 body{
   height: 100%;
-  font-size: 14px;
+  width: 100%;
   line-height: 1.42;
   background-color: #FFF;
   position: relative;
   overflow-x: hidden;
 }
-
+.body-overlay{
+  overflow: hidden;
+}
 ul{
   margin: 0;
   padding: 0;
@@ -38,7 +40,7 @@ a{
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: url(../img/water-1200.jpg) 0 0 no-repeat;
+  background: transparent url(../img/water-1200.jpg) 0 0 no-repeat;
   background-size: cover;
   margin-bottom: -$footer_height;
 
@@ -85,8 +87,9 @@ a{
 
 .footer-welcome{
   height: $footer_height;
+  line-height: $footer_height;
   position: relative;
-  padding: 40px 0;
+  // padding: 40px 0;
 }
 .footer__copyright{
   color: white;
@@ -99,41 +102,57 @@ a{
 }
 
 .welcome{
-  display: flex;
+  //display: flex;
   height: 100%;
   font-family: Roboto;
   position: relative;
   z-index: 1;
+}
+.win{
+  width: 380px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   perspective: 700px; 
+
 }
 .welcome__box{
-  width: 380px;
-  margin: auto;
+  // margin: auto;
+  width: 100%;
   border-radius: 5px;
   background-color: rgba(#122620, 0.6);
-  
+
   overflow: hidden;
   position: relative;
   z-index: 1;
   transition: transform 0.5s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
+
 }
+
+.front{
+  position: relative;
+}
+//Задний отвернут
 .back{
-  display: none;
   transform: rotateY( -180deg );
 }
+//Задний повернут
 :target .back{
-  display: block;
   transform: rotateY( 0deg );
 }
+//Передний отвернут
 :target .front{
-  display: none;
   transform: rotateY( 180deg );
 }
 :target .authorize{
-  display: none;
+  // display: none;
+  visibility: hidden;
 }
+
+
 .welcome__body{
   padding-top: 40px;
   text-align: center;
@@ -152,7 +171,7 @@ a{
 }
 .about__avatar{
   width: 141px;
-  height: 141px;
+  height: 141PX;
   border-radius: 50%;
   overflow: hidden;
   background-color: #e2e2e2;
@@ -189,7 +208,7 @@ a{
 }
 
 .socials{
-
+  white-space: nowrap;
 }
 .socials--opacity05{
     opacity: .5;
@@ -229,7 +248,7 @@ a{
 
 .welcome-menu{
   display: table;
-  height: 45px;
+  // height: 45px;
   line-height: 44px;
   width: 100%;
   position: absolute;
