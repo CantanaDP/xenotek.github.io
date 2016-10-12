@@ -2,6 +2,7 @@ extends ../_template
 
 block variables
 	- var title = 'Мои работы'
+	- var bodyClass = 'body-works'
 
 block content
 	.main-wrapper#top
@@ -26,7 +27,7 @@ block content
 						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
 					h1.about__author Корепанов Иван
 					.about__text Личный сайт веб разработчика
-			a(href="#next").header__arrow-down
+			a(href="#next").header__arrow-down.arrow-down
 				+icon('arrow_down')
 			.triangles-works
 				include sections/triangles
@@ -37,27 +38,45 @@ block content
 				+icon('works_header')
 
 		section.section-slider
-			.slider
-				.slider__show
-					img.slider__show-img(src="/assets/img/example.jpg", alt="slider")
+			.slider(current="1")
+				.slider__images
+					img.slider__image(nomer="1" src="/assets/img/works/work1.jpg" alt="slider")
+					img.slider__image(nomer="2" src="/assets/img/works/work2.jpg" alt="slider")
+					img.slider__image(nomer="3" src="/assets/img/works/work3.jpg" alt="slider")
 				
 				.slider__description
-					.description
-						h2.description__title Сайт школы онлайн Образования
+					.description(nomer="1")
+						h4.description__title Сайт школы онлайн Образования
+						.description__text HTML, CSS, JAVASCRIPT
+						a(href="https://loftschool.com/" target="_blank").description__link
+							+icon('link')
+							span Посмотреть сайт
+					.description(nomer="2")
+						h4.description__title Сайт 2
+						.description__text HTML, CSS, JAVASCRIPT
+						a(href="https://loftschool.com/" target="_blank").description__link
+							+icon('link')
+							span Посмотреть сайт
+					.description(nomer="3")
+						h4.description__title Сайт 333
 						.description__text HTML, CSS, JAVASCRIPT
 						a(href="https://loftschool.com/" target="_blank").description__link
 							+icon('link')
 							span Посмотреть сайт
 							
 				.slider__buttons
-					.slider__button.slider__button-left
-						a(href="#").slider__arrow
-							img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
-							+icon('portf_arrow_down')
-					.slider__button.slider__button-left
-						a(href="#").slider__arrow
-							img.slider__button-img(src="/assets/img/slide1.jpg", alt="slider")
-							+icon('portf_arrow_up')
+					.slider__button.slider__button--prev
+						.slider__thumbs
+							.slider__thumb(nomer="1")
+							.slider__thumb(nomer="2")
+							.slider__thumb(nomer="3")
+						+icon('portf_arrow_down')
+					.slider__button.slider__button--next
+						.slider__thumbs
+							.slider__thumb(nomer="1")
+							.slider__thumb(nomer="2")
+							.slider__thumb(nomer="3")
+						+icon('portf_arrow_up')
 
 
 		section.section-review
@@ -104,7 +123,7 @@ block content
 					
 
 			.section-feedback__arrow-up
-				a(href="#top")
+				a(href="#top").arrow-up
 					+icon('portf_arrow_up')
 
 

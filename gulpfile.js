@@ -7,7 +7,8 @@ global.$ = {
     task: require('./gulp/paths/tasks.js'),
     jsFoundation: require('./gulp/paths/js.foundation.js'),
     cssFoundation: require('./gulp/paths/css.foundation.js'),
-    app: require('./gulp/paths/app.js')
+    app: require('./gulp/paths/app.js'),
+    debug: require('./gulp/paths/debug.js')
   },
   gulp: require('gulp'),
   rimraf: require('rimraf'),
@@ -42,6 +43,8 @@ $.gulp.task('default', $.gulp.series(
 ));
 
 $.gulp.task('dev', $.gulp.parallel('watch','serve'));
+
+$.gulp.task('debug', $.gulp.parallel('watch:debug','serve'));
 
 $.gulp.task('tasks', function(cb) {
     $.path.task.forEach(function(taskPath) { console.log(taskPath.split('/').pop()); });

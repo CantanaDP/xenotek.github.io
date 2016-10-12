@@ -2,6 +2,7 @@ extends ../_template
 
 block variables
 	- var title = 'Блог'
+	- var bodyClass = 'body-blog'
 
 block content
 	.main-wrapper.main-wrapper--bg.main-wrapper--blog#top
@@ -24,6 +25,7 @@ block content
 						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
 					h1.title-blog Блог
 					.about__text Статьи, которые я написал
+			
 			.triangles-blog
 				include sections/triangles
 

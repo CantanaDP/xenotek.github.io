@@ -34,6 +34,13 @@ label{
 
 a{  
   text-decoration: none;
+  transition: all linear .4s;
+}
+svg{
+  transition: all linear .3s;
+}
+button{
+  transition: all linear .3s;  
 }
 .wrapper{
   min-height: 100%;

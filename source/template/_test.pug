@@ -1,0 +1,18 @@
+block variables
+	
+include common/mixins
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title #{title}
+
+		link(rel='stylesheet' href='/assets/css/foundation.css')
+		link(rel='stylesheet' href='/assets/css/app.css')
+		script(src='/assets/js/foundation.js' defer)
+		script(src='/assets/js/test.js' defer)   
+
+	body(class=bodyClass)
+		block content
+

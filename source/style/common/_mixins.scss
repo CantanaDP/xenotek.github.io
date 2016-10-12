@@ -63,3 +63,65 @@
 
 
 
+@mixin showPrev(){
+  animation-name: showPrev;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+}
+@keyframes showPrev{
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@mixin showNext(){
+  animation-name: showNext;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+}
+@keyframes showNext{
+  from {
+    top: 100%;
+  }
+  to {
+    top: 0;
+  }
+}
+
+
+@mixin fadeInLeft(){
+  animation-name: fadeInLeft;
+  animation-duration: .5s;
+  animation-timing-function: linear;
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+
+@mixin opacityIn(){
+  animation-name: opacityIn;
+  animation-duration: .7s;
+  animation-timing-function: linear;
+}
+@keyframes opacityIn{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -2,7 +2,7 @@ extends ../_template
 
 block variables
 	- var title = 'Обо мне'
-
+	- var bodyClass = 'body-about'
 
 block content	
 	.main-wrapper
@@ -26,7 +26,7 @@ block content
 						img(class="about__img" src="assets/img/avatar.jpg" alt="avatar")
 					h1.aboutme__author Корепанов Иван
 					.aboutme__text Личный сайт веб разработчика
-			a(href="#next").header__arrow-down
+			a(href="#next").header__arrow-down.arrow-down
 				+icon('arrow_down')
 			.triangles-about
 				include sections/triangles
@@ -59,16 +59,14 @@ block content
 
 		section.section-contacts
 			.section-contacts__map
-				//#map
+				#map
 				- var icons = ['skype', 'envelope', 'phone', 'map_marker']
 				- var links = ['skype:xenolitheone', 'mailto:moskovanin@yandex.ru', 'tel:+79312009324', 'https://www.google.ru/maps/@55.7900315,37.5614709,15z']
 				- var items = ['xenolitheone', 'moskovanin@yandex.ru', '+7 931 200 93 24', 'Москва, м. Динамо']
-				.section-contacts__wrapper
-					.contacts
-						h2.title-about.title-about--contacts Контакты
-						+contacts-menu("contacts-list", icons, links, items)
+				//.section-contacts__wrapper
+				.contacts
+					h2.title-about.title-about--contacts Контакты
+					+contacts-menu("contacts-list", icons, links, items)
 
 		include sections/footer
 	
-	//	script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDijOXp2FZJSfRKEEXqJAvpt6aVHOa2lZw&callback=initMap" async  defer)
-	//	script(src="/assets/js/maps.js")
