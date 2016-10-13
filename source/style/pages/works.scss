@@ -151,6 +151,97 @@
     top: 15px;
   }
 }
+.test{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background-color: rgba(176, 183, 170, 0.7);
+
+}
+.messagebox-wrapper{
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  background-color: rgba(176, 183, 170, 0.7);
+
+  .messagebox{
+    position: absolute;
+    z-index: 101;
+    max-width: 380px;
+    min-width: 280px;
+
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 25px 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    
+    &__close{
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: translate(40%, -40%);
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: #fff;
+      border: 1px solid rgba(176, 183, 170, 0.7);
+      cursor: pointer;      
+      display: flex;
+      
+      .icon{
+        margin: auto;
+        width: 50%;
+        height: 50%;
+      }
+      .icon--close{
+        fill: rgba(176, 183, 170, 0.7);
+      }
+      &:hover .icon--close{
+        fill: #4e8839;
+      }
+    }
+
+    &__text{
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 24px;  
+      text-align: center;
+      
+      p{
+        margin-bottom: 0;        
+      }
+      .error_message{
+        color: #d8646d;
+      }
+      .success_message{
+        color: #2A8A1E;
+      }
+    }
+    &__title{
+      font-family: SansusWebissimo;
+      font-size: 24px;
+      font-weight: normal;  
+      text-align: center; 
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      position: relative;
+
+      &:after{
+        @include underline(#566358, 60px, 2px);
+      }
+    }
+
+  }
+}
 
 .feedback{
     max-width: 380px;
@@ -160,14 +251,14 @@
     overflow: hidden;
     padding-top: 29px;
     position: relative;
-    
-    .feedback__title{
+
+    &__title{
       @extend .title-about;
       line-height: 41px;
       margin-bottom: 30px;
       padding-bottom: 25px;
     }
-
+    
     .input{
       padding-left: 20px;
     }
@@ -175,12 +266,13 @@
       height: auto;
       margin-bottom: 16px;
     }
+
     .textarea{
       width: 340px;
       height: 140px;
       display: inline-block;
       border-radius: 25px;
-      border: 0;
+      border: 2px solid transparent;
       outline: none;
       padding-left: 20px;
       padding-right: 20px;
@@ -190,8 +282,14 @@
       font-size: 16px;
       font-weight: 400;
     }
+    .form__button{
+      outline: none;
+    }
   
-
+    
+    .must-fill{
+      border: 2px solid #e31e24;
+    }
 
 }
 

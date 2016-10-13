@@ -108,18 +108,25 @@ block content
 			.icon-list3
 			.icon-list1
 
+			.messagebox-wrapper
+				.messagebox
+					.messagebox__close
+						+icon('close')
+					.messagebox__title Сообщение
+					.messagebox__text Вы не ввели Имя!
+
 			.feedback
 				h2.feedback__title.title-about--short Связаться со мной
-				form.form.feedback__form(action='#')
+				form.form.feedback__form(action='#' method="POST")
 					.form__group
-						input.input(type="text" placeholder="Имя" name="name")
+						input.input(type="text" placeholder="Имя" name="name" )
 					.form__group
-						input.input(type="text" placeholder="Email" name="password")
+						input.input(type="text" placeholder="Email" name="email" )
 					.form__group.form__group--textarea
-						textarea.textarea(rows='6', name='subject', placeholder='Ваше сообщение')
+						textarea.textarea(name='subject' placeholder='Ваше сообщение' )
 					.form__buttons
-						button.form__button.form__submit(name='submit', type='submit') Отправить
-						button.form__button.form__reset(name='clear', type='reset') Очистить
+						button.form__button.form--submit(name='submit', type='submit') Отправить
+						button.form__button.form--reset(name='clear', type='reset') Очистить
 					
 
 			.section-feedback__arrow-up

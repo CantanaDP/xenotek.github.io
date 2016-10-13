@@ -90,7 +90,7 @@ var worksForm = (function () {
 					dataType: 'json',
 					data: data
 				}).fail(function (ans) {
-					console.log('Ошибка на сервере! '+ans);
+					console.log('Ошибка на сервере! '+ans.responseText);
 					messagebox.html('<p class="error_message">Ошибка на сервере!</p>');
 					_showMessageBox();
 				});
@@ -111,9 +111,7 @@ var worksForm = (function () {
 	if (!$('.body-works').length) {
 		return;
 	}
-	console.log('Страница - Мои работы');
-
+	console.log('Форма обратной связи');
 	worksForm.init();
-
 
 }());

@@ -7,43 +7,26 @@ block variables
 block content
 	.main-wrapper#top
 
-		section.section-slider
-			.slider(current="1")
-				.slider__images
-					img.slider__image(nomer="1" src="/assets/img/works/work1.jpg" alt="slider")
-					img.slider__image(nomer="2" src="/assets/img/works/work2.jpg" alt="slider")
-					img.slider__image(nomer="3" src="/assets/img/works/work3.jpg" alt="slider")
-				
-				.slider__description
-					.description(nomer="1")
-						h4.description__title Сайт школы онлайн Образования
-						.description__text HTML, CSS, JAVASCRIPT
-						a(href="https://loftschool.com/" target="_blank").description__link
-							+icon('link')
-							span Посмотреть сайт
-					.description(nomer="2")
-						h4.description__title Сайт 2
-						.description__text HTML, CSS, JAVASCRIPT
-						a(href="https://loftschool.com/" target="_blank").description__link
-							+icon('link')
-							span Посмотреть сайт
-					.description(nomer="3")
-						h4.description__title Сайт 333
-						.description__text HTML, CSS, JAVASCRIPT
-						a(href="https://loftschool.com/" target="_blank").description__link
-							+icon('link')
-							span Посмотреть сайт
-							
-				.slider__buttons
-					.slider__button.slider__button--prev
-						.slider__thumbs
-							.slider__thumb(nomer="1")
-							.slider__thumb(nomer="2")
-							.slider__thumb(nomer="3")
-						+icon('portf_arrow_down')
-					.slider__button.slider__button--next
-						.slider__thumbs
-							.slider__thumb(nomer="1")
-							.slider__thumb(nomer="2")
-							.slider__thumb(nomer="3")
-						+icon('portf_arrow_up')
+		section.section-feedback
+			.icon-list3
+			.icon-list1
+			
+			.messagebox-wrapper
+				.messagebox
+					.messagebox__close
+						+icon('close')
+					.messagebox__title Сообщение
+					.messagebox__text Вы не ввели Имя!
+
+			.feedback
+				h2.feedback__title.title-about--short Связаться со мной
+				form.form.feedback__form(action='#' method="POST")
+					.form__group
+						input.input(type="text" placeholder="Имя" name="name" )
+					.form__group
+						input.input(type="text" placeholder="Email" name="email" )
+					.form__group.form__group--textarea
+						textarea.textarea(name='subject' placeholder='Ваше сообщение' )
+					.form__buttons
+						button.form__button.form--submit(name='submit', type='submit') Отправить
+						button.form__button.form--reset(name='clear', type='reset') Очистить
