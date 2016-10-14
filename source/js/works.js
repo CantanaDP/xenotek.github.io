@@ -17,6 +17,7 @@
 	};
 
 	var works = json.works;
+	//alert( works[0].title ); 
 
 	var current = 1;
 	var works_num = 3;//works.length
@@ -32,7 +33,5 @@
 		else current++;
     $('.slider').attr('current',current);
   });
-	//alert( works[0].title ); 
-
 
 }());

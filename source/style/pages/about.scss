@@ -176,23 +176,11 @@
     top: 30px;
     left: 30px;
   }
-  .header__hamburger{
-    position: absolute;
-    z-index: 2;
-    top: 30px;
-    right: 30px;
-  }
   .socials--floatleft{
     float: left;
   }
 
-  .hamburger{
-    float: right;
-  }
-  .icon--hamburger{
-    width: 36px;
-    height: 36px;
-  }
+
   .header__arrow-down{
     position: absolute;
     z-index: 2;
@@ -240,15 +228,24 @@
     font-size: 0;
     position: relative;
 
-    &:before{
+    &:before,&:after{
       content:'';
       position: absolute;
-      left: 0;
-      right: 0;
       top: 0;
       bottom: 0;
-    background-color: #ebefe2;
+      width: 50%;
+      background-color: #ebefe2;
+      z-index: -1;
     }
+    &:after{      
+      right: 0;
+      content:'';
+      position: absolute;
+      right: 0;
+      width: 50%;
+      background-color: #f4f5f0;
+    }
+
 }
 
 .section-about__page{

@@ -5,48 +5,25 @@ block variables
 	- var bodyClass = 'body-welcome'
 
 block content	
+	.preloader
+		.preloader__spinner
+			.preloader__animation
+			.preloader__percents 0%
+
 	.wrapper#authorize
 		.authorize
 			.authorize__wrapper
 				a(class="authorize__link" href="#authorize") Авторизоваться
 		.welcome
-			.win
-				.welcome__box.back
-					.welcome__body.welcome__body--authorize
-						.close
-							a(href="#")
-								+icon('close')
-						.title.title--underline Авторизуйтесь
-						form.form(action="#" method="POST" )
-							.form__group
-								.icon-wrapper
-									+icon('login')
-								input.input(type="text" placeholder="Логин" name="login")
-							.form__group
-								.icon-wrapper
-									+icon('password')
-								input.input(type="text" placeholder="Пароль" name="password")
-							
-							.check
-								label.check__label
-									input(type="checkbox" class="check__checkbox" name="robot")
-									span.check__wrap
-										+icon('check')
-									span(class="check__text") Я человек
-							.form__question Вы точно не робот?
-							.radiobox
-								input(id="yes" checked type="radio" class="radiobox__input" name="answer")
-								label.radiobox__label(for="yes").radiobox__label--first
-									span.radiobox__text Да
-								input(id="notsure" type="radio" class="radiobox__input" name="answer")
-								label.radiobox__label(for="notsure") 
-									span.radiobox__text Не уверен
-					
-							.form__buttons
-								a.form__button(href='#') На главную
-								button.form__button.form__submit(name='enter', type='submit') Войти
-			.win
-				.welcome__box.front
+			.messagebox-wrapper
+				.messagebox
+					.messagebox__close
+						+icon('close')
+					.messagebox__title Сообщение
+					.messagebox__text 
+
+			.win.front
+				.welcome__box
 					.welcome__body
 						.about
 							.about__avatar
@@ -57,6 +34,42 @@ block content
 								+socials("socials", socials)
 				
 						+menu-no-blank("welcome-menu", {'Мои работы': 'works.html', 'Обо мне': 'about.html', 'Блог': 'blog.html' })
+			.win.back
+				.welcome__box
+					.welcome__body.welcome__body--authorize
+						.close
+							a(href="#")
+								+icon('close')
+						
+						.title.title--underline Авторизуйтесь
+						form.form.form--authorize(action="#" method="POST" )
+							.form__group
+								.icon-wrapper
+									+icon('login')
+								input.input.input--text(type="text" placeholder="Логин" name="login")
+							.form__group
+								.icon-wrapper
+									+icon('password')
+								input.input.input--text(type="text" placeholder="Пароль" name="password")
+							
+							.check
+								label.check__label
+									input(value="no" type="checkbox" class="check__checkbox" name="robot")
+									span.check__wrap
+										+icon('check')
+									span(class="check__text") Я человек
+							.form__question Вы точно не робот?
+							.radiobox
+								input(id="yes" checked type="radio" class="radiobox__input radiobox__input--yes" name="answer" value="yes")
+								label.radiobox__label(for="yes").radiobox__label--first
+									span.radiobox__text Да
+								input(id="notsure" type="radio" class="radiobox__input" name="answer")
+								label.radiobox__label(for="notsure") 
+									span.radiobox__text Не уверен
+					
+							.form__buttons
+								a.form__button(href='#') На главную
+								button.form__button.form__submit(name='enter', type='submit') Войти
 
 	footer.footer-welcome
 		.footer__copyright 

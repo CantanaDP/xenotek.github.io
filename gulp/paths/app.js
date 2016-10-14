@@ -2,7 +2,6 @@
 
 module.exports = [
 	'./source/js/welcome.js',
-	'./source/js/form.authorize.js',
 	'./source/js/about.js',
 	'./source/js/maps.js',
 	'./source/js/blog.js',

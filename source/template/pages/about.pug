@@ -5,11 +5,13 @@ block variables
 	- var bodyClass = 'body-about'
 
 block content	
+	.preloader
+		.preloader__spinner
+			.preloader__animation
+			.preloader__percents 0%
+			
 	.main-wrapper
-		.overlay#open
-			a(href="#").hamburger-close
-				+icon('close')
-
+		.overlay
 			+menu-no-blank('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
 		header.header
 			.portfolio
@@ -19,7 +21,10 @@ block content
 					+socials("socials", socials)
 			.header__hamburger
 				a(href="#open").hamburger
-					+icon('hamburger')
+					.line.line--1
+					.line.line--2
+					.line.line--3
+						
 			.header__about
 				.about
 					.aboutme__avatar

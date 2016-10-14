@@ -1,4 +1,4 @@
-/*------------- OVERLAY ---------------*/
+
 .overlay{
   display: none;
   position: fixed;
@@ -8,27 +8,25 @@
   top: 0;
   bottom: 0;
 
-  opacity: 0.87;
-  background-color: #6c9c5a;
-
-  .hamburger-close{
+  &:before, &:after{
+    content:'';
     position: absolute;
-    z-index: 1;
-
-    top: 30px;
-    right: 30px;
-    width: 36px;
-    height: 36px;
-
-    .icon{
-      width: 100%;
-      height: 100%;  
-    }    
+    z-index: -1;
+    height: 100%;
+    background-color: rgba(#6c9c5a, 0.87);
+    @include shtorka;
   }
+  &:after{
+    right: 0;
+  }
+
 }
 
 .body-overlay .overlay{
   display: flex;
+  &:before, &:after{
+    width: 50%;
+  }
 }
 .overlay-menu{
   margin: auto;
@@ -43,15 +41,31 @@
 
 }
 .overlay-menu__item{
+ 
   margin-bottom: 40px;
   padding-bottom: 20px;
   position: relative;
+  @include bounceIn;
 }
+
+@for $i from 2 through 4 {
+  .overlay-menu__item:nth-of-type(#{$i}) {
+    animation-duration: #{$shtorka_duration*2.0+$i/10}s;    
+  }
+}
+
 
 .overlay-menu__link{
   color: #fff;
 }
-
+.overlay-menu__item .overlay-menu__link:after{
+  content:'';
+  visibility: hidden;
+  transition: all 0.2s ease-in-out 0s;
+  transform: scaleX(0);
+}
 .overlay-menu__item:hover .overlay-menu__link:after{
+  visibility: visible;
   @include underline(white);
+  transform: scaleX(1);
 }

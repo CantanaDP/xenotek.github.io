@@ -1,19 +1,20 @@
 
 
 @import 'common/_mixins';
+@import 'common/_hamburger';
 @import 'common/_fonts';
 @import 'common/_spritepng';
+@import 'common/_preloader';
+
 @import 'pages/welcome';
 @import 'pages/about';
 @import 'pages/works';
 @import 'common/_slider';
 @import 'pages/blog';
+
 @import 'common/_overlay';
 @import 'common/_triangles';
 
 @import 'adaptive/_adaptive';
-/*@import 'adaptive/_adaptive_about';
-@import 'adaptive/_adaptive_works';
-@import 'adaptive/_adaptive_blog';*/
 
 

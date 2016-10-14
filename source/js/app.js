@@ -4,12 +4,9 @@
 //HAMBURGER
   $('.hamburger').on('click', function(e) {
     e.preventDefault();
-    $('body').addClass('body-overlay');
+    $('body').toggleClass('body-overlay');
   });
-  $('.hamburger-close').on('click', function(e) {
-    e.preventDefault();
-    $('body').removeClass('body-overlay');
-  });
+
 
 //Вниз
 	scrollFrom( '.arrow-down', 700 );

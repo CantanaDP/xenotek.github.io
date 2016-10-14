@@ -5,28 +5,17 @@ block variables
 	- var bodyClass = 'body-works'
 
 block content
+
+		
 	.main-wrapper#top
+		.header__hamburger
+			a(href="#open").hamburger
+				svg(width="40px" height="35px"  viewBox="0 0 40 35" xml:space="preserve")
+					path#p1(fill="#FFFFFF" d="M40,2.5C40,3.881,38.881,5,37.5,5h-35C1.119,5,0,3.881,0,2.5l0,0C0,1.119,1.119,0,2.5,0h35 C38.881,0,40,1.119,40,2.5L40,2.5z")
+					path#p2(fill="#FFFFFF" d="M40,17.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,20,0,18.881,0,17.5l0,0C0,16.119,1.119,15,2.5,15h35 C38.881,15,40,16.119,40,17.5L40,17.5z")
+					path#p3(fill="#FFFFFF" d="M40,32.5c0,1.381-1.119,2.5-2.5,2.5h-35C1.119,35,0,33.881,0,32.5l0,0C0,31.119,1.119,30,2.5,30h35 C38.881,30,40,31.119,40,32.5L40,32.5z")
 
-		section.section-feedback
-			.icon-list3
-			.icon-list1
-			
-			.messagebox-wrapper
-				.messagebox
-					.messagebox__close
-						+icon('close')
-					.messagebox__title Сообщение
-					.messagebox__text Вы не ввели Имя!
-
-			.feedback
-				h2.feedback__title.title-about--short Связаться со мной
-				form.form.feedback__form(action='#' method="POST")
-					.form__group
-						input.input(type="text" placeholder="Имя" name="name" )
-					.form__group
-						input.input(type="text" placeholder="Email" name="email" )
-					.form__group.form__group--textarea
-						textarea.textarea(name='subject' placeholder='Ваше сообщение' )
-					.form__buttons
-						button.form__button.form--submit(name='submit', type='submit') Отправить
-						button.form__button.form--reset(name='clear', type='reset') Очистить
+		.ham
+			.strip
+			.strip
+			.strip
