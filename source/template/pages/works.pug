@@ -110,7 +110,10 @@ block content
 					.review__about — преподаватель
 
 
-		section.section-feedback
+		section.section-feedback.blur
+			.blur__background
+				img.blur__img(src="/assets/img/1800_forest_works.jpg", alt="blur__img")
+
 			.icon-list3
 			.icon-list1
 
@@ -121,7 +124,8 @@ block content
 					.messagebox__title Сообщение
 					.messagebox__text Вы не ввели Имя!
 
-			.feedback.blur__form
+			.feedback
+				.blur__form
 				h2.feedback__title.title-about--short Связаться со мной
 				form.form.feedback__form(action='#' method="POST")
 					.form__group
@@ -140,4 +144,4 @@ block content
 					+icon('portf_arrow_up')
 
 
-			include sections/footer
+		include sections/footer

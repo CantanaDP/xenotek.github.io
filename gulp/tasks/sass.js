@@ -11,6 +11,7 @@ module.exports = function() {
         'letter-spacing','margin','margin-bottom','margin-top',
         'padding','padding-bottom','padding-top']
       }))
+      .pipe($.gp.replace('PX', 'px'))
 /*
       .pipe($.gp.cssUnit({
             type     :    'px-to-rem',

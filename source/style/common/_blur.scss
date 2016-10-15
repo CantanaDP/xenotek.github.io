@@ -1,0 +1,38 @@
+
+.blur__background {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	min-width: 1700px;
+  background-color: #f4f5f0;
+}
+
+.blur__img {
+	display: block;
+	max-width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.blur__form {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #f4f5f0 url('../img/1800_forest_works.jpg') center bottom no-repeat;
+	filter: blur(3px);
+}
+
+.blur__form-wrapper {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 400px;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	border-radius: 10px;
+	position: relative;
+}

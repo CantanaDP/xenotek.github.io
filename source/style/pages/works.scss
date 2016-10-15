@@ -132,11 +132,11 @@
 }
 
 .section-feedback{
-  background: url(../img/1200_forest_works.jpg) 0 bottom no-repeat;
-
-  background-size: cover;
+ // background: url(../img/1200_forest_works.jpg) center bottom no-repeat;
+ // background-size: 100% auto;
   padding: 60px 0 50vh;
 
+  overflow: hidden;
   position: relative;
 
   .icon-list1{
@@ -152,6 +152,17 @@
     top: 15px;
   }
 }
+
+  @include large{
+    .section-feedback{
+      padding-bottom: 20vh;
+    }
+  }
+  @include phones{
+    .section-feedback{
+      padding-bottom: 70vh;
+    }
+  }
 
 .messagebox-wrapper{
   display: none;
@@ -236,9 +247,7 @@
   }
 }
 
-.blur__background{
-  
-}
+
 
 
 .feedback{
@@ -295,9 +304,14 @@
       margin-top: 40px;
       width: 100%;
       text-align: center;
-      opacity: 0.7;
       
-      &:hover{
-        opacity: 1;
+      .arrow-up{
+        opacity: 0.7;
+        
+        &:hover{
+          opacity: .99;
+        }
       }
+      
 }
+

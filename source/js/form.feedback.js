@@ -12,6 +12,7 @@ var worksForm = (function () {
 				$('.messagebox-wrapper,.messagebox__close').on('click', _hideMessageBox);
 				$('.messagebox').on('click', _stopPropagation);
 				$('.feedback__form').on('submit', _validateForm);
+				$('.feedback__form').on('reset', _resetForm);
 		};
 
 		var _showMessageBox = function (event) {
@@ -22,6 +23,10 @@ var worksForm = (function () {
 		};
 		var _stopPropagation = function (event) {
 				event.stopPropagation();
+		};
+
+		var _resetForm = function(event) {
+			$('.must-fill').removeClass('must-fill');
 		};
 
 		var _validateForm = function(event) {

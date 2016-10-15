@@ -12,6 +12,7 @@ var authorizeForm = (function () {
         $('.messagebox-wrapper,.messagebox__close').on('click', _hideMessageBox);
         $('.messagebox').on('click', _stopPropagation);
         $('.form--authorize').on('submit', _validateForm);
+        //$('.form--authorize').on('reset', _resetForm);
     };
 
     var _showMessageBox = function (event) {
@@ -22,6 +23,9 @@ var authorizeForm = (function () {
     };
     var _stopPropagation = function (event) {
         event.stopPropagation();
+    };
+    var _resetForm = function(event) {
+      $('.must-fill').removeClass('must-fill');
     };
 
     var _validateForm = function(event) {

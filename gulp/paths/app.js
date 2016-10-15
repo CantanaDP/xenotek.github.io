@@ -9,5 +9,6 @@ module.exports = [
 	'./source/js/blog.js',
 	'./source/js/works.js',
 	'./source/js/form.feedback.js',
+	'./source/js/blur.js',
   './source/js/app.js'
 ];
