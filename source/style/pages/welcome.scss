@@ -1,5 +1,32 @@
 $footer_height: 38PX;
 
+.data{
+  position: absolute;
+}
+
+.parallax{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+.parallax__layer{
+  width: 110%;
+  margin-left: -55%;
+  left: 50%;
+  height: 110%;
+  bottom: -5%;
+  position: absolute;
+  
+  img{
+    position: absolute;
+    display: block;
+    bottom: 0;
+    min-width: 100%;
+  }
+}
 
 html {
   height: 100%;
@@ -47,8 +74,8 @@ button{
   height: 100%;
   overflow: hidden;
   position: relative;
-  background: transparent url(../img/water-1200.jpg) 0 0 no-repeat;
-  background-size: cover;
+  // background: transparent url(../img/water-1200.jpg) 0 0 no-repeat;
+  // background-size: cover;
   margin-bottom: -$footer_height;
 
   &:after{

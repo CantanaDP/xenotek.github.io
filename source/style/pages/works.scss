@@ -132,7 +132,8 @@
 }
 
 .section-feedback{
-  background: url(../img/feedback-bg.jpg) 0 bottom no-repeat;
+  background: url(../img/1200_forest_works.jpg) 0 bottom no-repeat;
+
   background-size: cover;
   padding: 60px 0 50vh;
 
@@ -151,15 +152,7 @@
     top: 15px;
   }
 }
-.test{
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100px;
-  height: 100px;
-  background-color: rgba(176, 183, 170, 0.7);
 
-}
 .messagebox-wrapper{
   display: none;
   position: fixed;
@@ -242,6 +235,11 @@
 
   }
 }
+
+.blur__background{
+  
+}
+
 
 .feedback{
     max-width: 380px;
