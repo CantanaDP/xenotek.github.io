@@ -5,15 +5,14 @@ block variables
 	- var bodyClass = 'body-welcome'
 
 block content	
+	.Background
+		canvas.Background-canvas
 
 	.preloader
 		.preloader__spinner
 			.preloader__animation
 			.preloader__percents 0%
-			
-	.parallax
-		.parallax__layer
-			img(src="/assets/img/parallax_1.jpg", alt="")
+
 	.wrapper#authorize
 		.authorize
 			.authorize__wrapper
@@ -80,3 +79,5 @@ block content
 			span.footer__media © Корепанов Иван 
 			span.footer__media-hide | 
 			span.footer__media-line создано с любовью в LoftSchool | 2016
+
+	script(src="/assets/js/water.js")

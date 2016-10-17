@@ -9,11 +9,15 @@ block content
 		.preloader__spinner
 			.preloader__animation
 			.preloader__percents 0%
+			
 
 	.main-wrapper.main-wrapper--bg.main-wrapper--blog#top
 		.overlay
 			+menu-no-blank('overlay-menu', {'Мои работы': 'works.html', 'Блог': 'blog.html', 'Обо мне': 'about.html', 'Авторизация': '/#authorize'})
 		header.header.header--height
+			.parallax
+				.parallax__layer
+					img(src="/assets/img/parallax_1.jpg", alt="")
 			.blog-svg
 				+icon('blog_header')
 			.header__socials

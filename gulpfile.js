@@ -34,6 +34,7 @@ $.gulp.task('default', $.gulp.series(
     'copy:favicon',
     'copy:image',
     'copy:fonts',
+    'copy:webglwater',
     'css:foundation'
   ),
   $.gulp.parallel(

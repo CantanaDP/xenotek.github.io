@@ -36,9 +36,9 @@ var blurModule = (function(){
 		return;
 	}
 	console.log('Блюр формы');
-
-}());
-
 	$(window).on('load',function(){	blurModule.set(); });
 	$(window).resize(function(){ blurModule.set(); });
+}());
+
+	
 

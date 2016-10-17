@@ -17,6 +17,7 @@ module.exports = [
   './gulp/tasks/sprite.image.js',
   './gulp/tasks/copy.fonts.js',
   './gulp/tasks/copy.favicon.js',
+  './gulp/tasks/copy.webglwater.js',
   './gulp/tasks/upload.ftp.js'
 ];
 
