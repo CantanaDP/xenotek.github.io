@@ -5,7 +5,7 @@
 	
 	console.log('Страница - Обо мне');
 
-	// if ($('#map').length>0) initGoogleMaps();
+	 if ($('#map').length>0) initGoogleMaps();
 
 
 

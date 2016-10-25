@@ -69,7 +69,7 @@ var worksForm = (function () {
 				return false;
 			}
 			
-			var feedback_answer = _ajaxForm(form, "/feedback.php");
+			var feedback_answer = _ajaxForm(form, "/works/mail");
 
 			feedback_answer.done(function(answer){
 				//console.log(answer);

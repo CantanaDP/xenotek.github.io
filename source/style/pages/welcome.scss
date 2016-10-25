@@ -29,7 +29,7 @@ $footer_height: 38PX;
   top: 0;
   left: 0;
   right: 0;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 .parallax__layer{
@@ -48,54 +48,13 @@ $footer_height: 38PX;
   }
 }
 
-html {
-  height: 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body{
-  height: 100%;
-  width: 100%;
-  line-height: 1.42;
-  background-color: #FFF;
-  position: relative;
-  overflow-x: hidden;
-}
-.body-overlay{
-  overflow: hidden;
-}
-ul{
-  margin: 0;
-  padding: 0;
-  li{
-    list-style: none;
-  }
-}
-label{
-  cursor: pointer;
-}
-
-a{  
-  text-decoration: none;
-  transition: all linear .4s;
-}
-svg{
-  transition: all linear .3s;
-}
-button{
-  transition: all linear .3s;  
-}
 .wrapper{
   min-height: 100%;
   height: 100%;
   overflow: hidden;
   position: relative;
-  // background: transparent url(../img/water-1200.jpg) 0 0 no-repeat;
-  // background-size: cover;
+  background: transparent url(../img/water-1200.jpg) 0 0 no-repeat;
+  background-size: cover;
   margin-bottom: -$footer_height;
 
   &:after{

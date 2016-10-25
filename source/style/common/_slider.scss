@@ -28,35 +28,40 @@
   transition: top .5s linear;
 }
 
-.slider__thumb[nomer="1"]{
-  background: url(../img/works/work1.jpg) no-repeat center/100%;
-}
-.slider__thumb[nomer="2"]{
-  background: url(../img/works/work2.jpg) no-repeat center/100%;
-}
-.slider__thumb[nomer="3"]{
-  background: url(../img/works/work3.jpg) no-repeat center/100%;
+$works_num: 50;
+
+@for $i from 1 through $works_num {
+  .slider__thumb[nomer="#{$i}"]{
+    background: url(../img/works/work#{$i}.jpg) no-repeat center/100%;
+  }
 }
 
-
-.slider[current="1"] .description[nomer="1"],
-.slider[current="2"] .description[nomer="2"],
-.slider[current="3"] .description[nomer="3"]{
+%slider-description {
   z-index: 10;
 
-    .description__title{
-      @include fadeInLeft();
-    }    
-    .description__text{
-      @include opacityIn();
-    }
+  .description__title{
+    @include fadeInLeft();
+  }    
+  .description__text{
+    @include opacityIn();
+  }
 }
-.slider[current="1"] .slider__image[nomer="1"],
-.slider[current="2"] .slider__image[nomer="2"],
-.slider[current="3"] .slider__image[nomer="3"]{
+@for $i from 1 through $works_num {
+  .slider[current="#{$i}"] .description[nomer="#{$i}"]{
+    @extend %slider-description;
+  }
+}
+
+%slider-image {
   opacity: 1;
   z-index: 10;
 }
+@for $i from 1 through $works_num {
+  .slider[current="#{$i}"] .slider__image[nomer="#{$i}"]{
+    @extend %slider-image;
+  }
+}
+
 .slider__button--prev .slider__thumb{
   top: 100%;
 }
@@ -64,19 +69,35 @@
   top: -100%;
 }
 
-.slider[current="1"] .slider__button--prev .slider__thumb[nomer="3"],
-.slider[current="2"] .slider__button--prev .slider__thumb[nomer="1"],
-.slider[current="3"] .slider__button--prev .slider__thumb[nomer="2"]{
+
+%slider-showPrev {
   top: 0;
   display: block;
   @include showPrev();
 }
-.slider[current="1"] .slider__button--next .slider__thumb[nomer="2"],
-.slider[current="2"] .slider__button--next .slider__thumb[nomer="3"],
-.slider[current="3"] .slider__button--next .slider__thumb[nomer="1"]{
+
+.slider[current="1"] .slider__button--prev .slider__thumb[nomer="#{$works_num}"]{
+  @extend %slider-showPrev;
+}
+@for $i from 2 through $works_num {
+  .slider[current="#{$i}"] .slider__button--prev .slider__thumb[nomer="#{$i - 1}"]{
+    @extend %slider-showPrev;
+  }
+}
+
+%slider-showNext {
   top: 0;
   display: block;
   @include showNext();
+}
+
+.slider[current="#{$works_num}"] .slider__button--next .slider__thumb[nomer="1"]{
+  @extend %slider-showNext;
+}
+@for $i from 1 through ($works_num - 1) {
+  .slider[current="#{$i}"] .slider__button--next .slider__thumb[nomer="#{$i + 1}"]{
+    @extend %slider-showNext;
+  }
 }
 
 

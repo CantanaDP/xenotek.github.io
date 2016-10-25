@@ -1,0 +1,30 @@
+
+@media screen and (min-width: 1201px){
+ 
+
+}
+
+//laptop
+@media screen and (max-width: 992px){
+  html{
+    font-size: 15PX;
+  }
+}
+//tablets
+@media screen and (max-width: 768px){
+  html{
+    font-size: 14PX;
+  }
+}
+
+//phones
+@media screen and (max-width: 480px), screen and (max-height: 480px) and (max-width: 992px){
+  html{
+    font-size: 13PX;
+  }
+}
+
+
+
+
+

@@ -25,7 +25,7 @@
   var scroller = function() {
     var scrollTop = $(window).scrollTop();
     for (var i = 0; i < titles.length; i++) {
-        var titleTop = titles[i]-50;
+        var titleTop = titles[i];
 
         if ( scrollTop > titleTop && current !== i) {
           $('.blog-wrapper').addClass('sticky');

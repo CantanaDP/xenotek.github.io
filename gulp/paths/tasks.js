@@ -1,5 +1,27 @@
 'use strict';
 
+var fs = require('fs');
+var path = require('path');
+
+var getFiles = function (dir, files_){
+    
+  files_ = files_ || [];
+    var files = fs.readdirSync(dir);
+    for (var i in files){
+        var name = dir + '/' + files[i];
+        if (fs.statSync(name).isDirectory()){
+            getFiles(name, files_);
+        } else {
+            files_.push(name);
+        }
+    }
+    return files_;
+};
+var files = getFiles('./gulp/tasks');
+
+module.exports = files;
+
+/*
 module.exports = [
   './gulp/tasks/sass.js',
   './gulp/tasks/serve.js',
@@ -21,3 +43,4 @@ module.exports = [
   './gulp/tasks/upload.ftp.js'
 ];
 
+*/

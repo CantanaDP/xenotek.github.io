@@ -57,11 +57,14 @@ block content
 				p.
 					Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
 
+				//{{parts/skills}}
+				//{delete}
 				.skills
 					+chart(['HTML5','CSS3','JavaScript & jQuery'], 'Frontend')
 					+chart(['PHP','MySQL','Node.js & npm','Mongo.db'], 'Backend')
 					+chart(['Git','Gulp','Bower'], 'WorkFlow')
-
+				//{/delete}
+				
 		section.section-contacts
 			.section-contacts__map
 				#map

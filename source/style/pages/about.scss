@@ -479,7 +479,6 @@
 
   }
 
-
   .chart{
     position: relative;
     width: $d;
@@ -490,7 +489,7 @@
     fill: #dfdcd5;
     stroke: #6c9c5a;
     stroke-width: $r;
-    stroke-dasharray: 20 158;
+    stroke-dasharray: 20 170;
     transition: stroke-dasharray 1s ease;
   }
   .chart__svg {

@@ -8,7 +8,8 @@ global.$ = {
     jsFoundation: require('./gulp/paths/js.foundation.js'),
     cssFoundation: require('./gulp/paths/css.foundation.js'),
     app: require('./gulp/paths/app.js'),
-    debug: require('./gulp/paths/debug.js')
+    debug: require('./gulp/paths/debug.js'),
+    admin: require('./gulp/paths/admin.js')
   },
   gulp: require('gulp'),
   rimraf: require('rimraf'),
@@ -44,8 +45,8 @@ $.gulp.task('default', $.gulp.series(
 ));
 
 $.gulp.task('dev', $.gulp.parallel('watch','serve'));
-
 $.gulp.task('debug', $.gulp.parallel('watch:debug','serve'));
+$.gulp.task('admin', $.gulp.parallel('watch:admin','serve'));
 
 $.gulp.task('tasks', function(cb) {
     $.path.task.forEach(function(taskPath) { console.log(taskPath.split('/').pop()); });

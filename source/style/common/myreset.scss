@@ -1,0 +1,41 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 16PX;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  height: 100%;
+  width: 100%;
+  line-height: 1.42;
+  background-color: #FFF;
+  position: relative;
+  overflow-x: hidden;
+}
+.body-overlay{
+  overflow: hidden;
+}
+ul{
+  margin: 0;
+  padding: 0;
+  li{
+    list-style: none;
+  }
+}
+label{
+  cursor: pointer;
+}
+
+a{  
+  text-decoration: none;
+  transition: all linear .4s;
+}
+svg{
+  transition: all linear .3s;
+}
+button{
+  transition: all linear .3s;  
+}

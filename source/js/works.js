@@ -6,21 +6,14 @@
 	
 	console.log('Страница - Мои работы');
 
-	var json = {
-		"works": [
-			{"title": "Сайт 1",	"description": "HTML, CSS, JAVASCRIPT", "img": "/assets/img/works/work1.jpg"},
-			{"title": "Сайт 2",	"description": "HTML, CSS, JAVASCRIPT", "img": "/assets/img/works/work2.jpg"},
-			{"title": "Сайт 3",	"description": "HTML, CSS, JAVASCRIPT", "img": "/assets/img/works/work1.jpg"},
-			{"title": "Сайт 4",	"description": "HTML, CSS, JAVASCRIPT", "img": "/assets/img/works/work2.jpg"},
-			{"title": "Сайт 5",	"description": "HTML, CSS, JAVASCRIPT", "img": "/assets/img/works/work1.jpg"},
-		]
-	};
-
-	var works = json.works;
-	//alert( works[0].title ); 
-
 	var current = 1;
-	var works_num = 3;//works.length
+	var works_num = $('.slider__image').length;//works.length
+
+	$('.section-slider').prepend('<style>.slider[current="1"] .slider__button--prev .slider__thumb[nomer="'+works_num+'"]{'+
+		'top: 0; display: block; animation: .5s linear 1 showPrev;}'+
+		'.slider[current="'+works_num+'"] .slider__button--next .slider__thumb[nomer="1"]{'+
+		'top: 0; display: block; animation: .5s linear 1 showNext;}'+
+	'</style>');
 
 	$('.slider__button--prev').on('click', function(e) { 
 		if (current==1) current = works_num;

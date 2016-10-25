@@ -1,0 +1,65 @@
+extends ../_admin
+
+block variables
+	- var title = 'Панель администрирования'
+	- var bodyClass = 'body-admin'
+
+block content	
+
+	.panel
+		.panel__header
+			.panel__header-title Панель администрирования
+			a(href="/").panel__header-link Вернуться на сайт
+		.panel__body
+			.panel__tabs
+				ul.tabs__controls
+					li.tabs__controls-item(data-content="1")
+						a(href="#").tabs__controls-link Обо мне
+					li.tabs__controls-item(data-content="2")
+						a(href="#").tabs__controls-link Блог
+					li.tabs__controls-item(data-content="3").active
+						a(href="#").tabs__controls-link Мои работы
+			.panel__content
+				ul.content
+					li.content__item.content__item--1
+						.content__title Страница «Обо мне»
+						.content__body
+							form(action="/admin/update" method="POST")
+								//{{parts/skills-admin}}
+								//{delete}
+								include tabs/skills
+								//{/delete}
+								button.btn(type="submit") Сохранить
+							
+					li.content__item.content__item--2
+						.content__title Страница «Блог»
+						.content__body
+							form(action="/admin/addarticle" method="POST").articles
+								.articles__title Добавить запись
+								.form-group
+									input.input-text.input-text--articles(type="text" name="title" placeholder='Название') 
+								.form-group
+									input.input-text.input-text--articles(type="text" name="date" placeholder='Дата')
+								.form-group
+									textarea.textarea.textarea--articles(type="text" name="content" placeholder='Содержание')
+								button.btn(type="submit") Добавить
+								
+
+					li.content__item.content__item--3.active
+						.content__title Страница «Мои работы»
+						.content__body
+							form(action="/admin/addwork" method="POST").works
+								.works__title Добавить работу
+								.form-group
+									input.input-text.input-text--works(type="text" name="name" placeholder='Название проекта') 
+								.form-group
+									input.input-text.input-text--works(type="text" name="description" placeholder='Технологии')
+								.form-group
+									input.input-text.input-text--works(type="text" name="link" placeholder='Ссылка')
+								.files
+									input.files__input#file-img(type="file" name="image")
+									label.files__label(for="file-img")
+										.files__button Загрузить картинку
+								
+								button.btn(type="submit") Добавить
+

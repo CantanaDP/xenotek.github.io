@@ -1,0 +1,53 @@
+
+.works__title, .articles__title{
+	color: #455a64;
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 34px;
+	margin-bottom: 20px;
+}
+
+.input-text--works, .input-text--articles{
+	height: 45px;
+	width: 300px;
+	padding-left: 19px;
+}
+
+.textarea--articles{
+	width: 300px;
+}
+
+.form-group{
+	margin-bottom: 20px;	
+}
+
+.files{
+	margin-bottom: 30px;
+}
+
+.files__input{
+	position: absolute;
+	left: -9999px;
+}
+
+.files__button{
+	display: inline-block;
+	color: rgba(#00bfa5, 0.7);
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 34PX;
+	height: 34PX;
+	padding-left: 46px;
+   
+  @include sprite-image($icon-upload);
+  background-repeat: no-repeat;
+
+}
+
+
+
+
+
+

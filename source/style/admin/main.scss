@@ -1,0 +1,165 @@
+$green: #74a163;
+
+.input-text{
+	display: inline-block;
+	vertical-align: middle;
+	height: 32px;
+	background-color: white;
+	border-radius: 5px;
+	padding: 0 10px;
+	border: none;
+	outline: none;
+
+	&:focus{
+		box-shadow: 0px 0px 10px 0px rgba($green,0.75);
+	}
+}
+.textarea{
+	background-color: white;
+	border-radius: 5px;
+	padding: 15px 20px;
+	height: 165px;
+	border: none;
+	outline: none;
+}
+
+
+.panel{
+	min-height: 100%;
+	background: url(../img/water-1200.jpg) 0 0 no-repeat;
+  background-size: cover;	
+  position: relative;
+
+  &:before{
+		content:'';
+		height: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background-color: rgba(#fff, 0.85);
+	}
+}
+
+
+.panel__header{
+	@include clearfix;
+	padding: 30px;
+	background-color: $green;
+	position: relative;
+
+	&-title{
+		float: left;
+		color: #fff;
+		font-family: Roboto;
+		font-size: 28px;
+		font-weight: 500;
+		line-height: 34px;
+	}
+	&-link{
+		float: right;
+		color: rgba(#fff, 0.7);
+		font-family: Roboto;
+		font-size: 16px;
+		font-weight: 500;
+		line-height: 24px;
+		transition: all .2s linear;
+		border-bottom: 1px solid rgba(#fff, 0.7);
+	
+
+		&:hover{
+			border-bottom-color: rgba(#fff, 0);
+			color: #fff;
+		}
+	}
+
+}
+
+.panel__body{
+	position: relative;
+	z-index: 1;
+}
+
+
+.panel__tabs{
+	background-color: #f0efe9;
+	margin-bottom: 50px;
+}
+
+.panel__content{
+	padding: 0 30px;
+}
+
+.tabs__controls{
+	@include clearfix;
+}
+
+.tabs__controls-item{
+	float: left;
+	//margin-right: 2px;
+	border-right: 1px solid #fff;
+	transition: all 0.2s linear;
+
+	&:hover, &.active{
+		background-color: #fff;
+
+		.tabs__controls-link{
+			color: $green;
+		}
+	}
+
+	&:first-child{
+	}
+}
+
+.tabs__controls-link{
+	display: block;
+	padding: 20px 60px;
+	text-transform: uppercase;
+	color: rgba(#455a64,0.8);
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 36px;
+}
+
+
+.content__item{
+	display: none;
+
+	&.active{
+		display: block;
+	}
+}
+.content__title{
+	color: #455a64;
+	font-family: Roboto;
+	font-size: 21px;
+	font-weight: 500;
+	line-height: 34px;	
+	margin-bottom: 45px;
+}
+.content__body{
+	padding-bottom: 30px;
+}
+
+.btn{
+	position: relative;
+	display: inline-block;
+	color: rgba(white, 0.7);
+	font-family: Roboto;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 36px;
+	padding: 10px 22px;
+	background-color: $green;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s linear;
+	border: none;
+
+	&:hover{
+		color: rgba(white, 1);
+	}
+}

@@ -33,11 +33,13 @@ Thumbs.db
 bower_components
 dist
 build
-media
+ignore
 
 # Node.JS
 node_modules
 npm-debug.log
 
 #ftp
+php/app/core/config_ivankorepanov.php
+php/app/core/config.php
 gulp/tasks/upload.ftp.js

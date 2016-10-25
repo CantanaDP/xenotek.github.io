@@ -44,6 +44,8 @@ block content
 				+icon('works_header')
 
 		section.section-slider
+			//{{parts/section-slider}}
+			//{delete}
 			.slider(current="1")
 				.slider__images
 					img.slider__image(nomer="1" src="/assets/img/works/work1.jpg" alt="slider")
@@ -83,7 +85,7 @@ block content
 							.slider__thumb(nomer="2")
 							.slider__thumb(nomer="3")
 						+icon('portf_arrow_up')
-
+			//{/delete}
 
 		section.section-review
 			.icon-list2
@@ -127,7 +129,7 @@ block content
 			.feedback
 				.blur__form
 				h2.feedback__title.title-about--short Связаться со мной
-				form.form.feedback__form(action='#' method="POST")
+				form.form.feedback__form(action='/works/mail' method="POST")
 					.form__group
 						input.input.input--text(type="text" placeholder="Имя" name="name" )
 					.form__group

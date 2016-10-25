@@ -11,6 +11,7 @@
 		if (background != 'none') {
 			var path = background.replace('url("', '').replace('")', '');
 			imgs.push(path);
+			//console.log(path);
 		}
 
 		if (img) {
@@ -18,12 +19,13 @@
 
 			if (path) {
 				imgs.push(path);
+				//console.log(path);
 			}
 		}
 	});
 	
 	var percentsTotal = 1;
-
+//console.log(imgs.length);
 	for (var i = 0; i < imgs.length; i++) {
 		var image = $('<img>', {
 			attr: {
